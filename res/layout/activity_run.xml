@@ -10,35 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
      >
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="117dp"
-        android:text="Finish Run" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="65dp"
-        android:text="1/4 Mile Complete" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="42dp"
-        android:text="0:00"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="55sp" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -48,5 +19,43 @@
         android:layout_marginTop="16dp"
         android:text="Run in Progress"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="75dp"
+        android:text="Finish Run" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="23dp"
+        android:text="1/4 Mile Complete" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="0:00"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="55sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="0 Laps Finished"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

@@ -20,11 +20,25 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class RunActivity extends Activity {
-
+public static int lapsCompleted = 0;
+public static TextView TimerText;
+public static ProgressTracker tracker;
+public static boolean continues = false;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_run);
+		continues = false;
+		lapsCompleted = 0;
+		tracker = new ProgressTracker();
+		TimerText = (TextView) findViewById(R.id.textView1);
+		final Thread timeKeeperThread = new Thread(new TimeKeeper());
+		timeKeeperThread.start();
+		
+		
+		
+		
+		
 		
  Button button = (Button) findViewById(R.id.button2);
 	    
@@ -36,6 +50,10 @@ public class RunActivity extends Activity {
 	        public void onClick(View v) {
 	        	
 	        	
+	        		
+					TimeKeeper.kill = true;
+					while(!continues);
+				
 	        	Intent myIntent = new Intent(RunActivity.this, FinishActivity.class);
 	        	//myIntent.putExtra("key", value); //Optional parameters
 	        	RunActivity.this.startActivity(myIntent);
@@ -47,7 +65,27 @@ public class RunActivity extends Activity {
 	        
 	    });
 	    
-		
+ Button button1 = (Button) findViewById(R.id.button1);
+	    
+	    
+	    
+	    button1.setOnClickListener(new View.OnClickListener() {
+	    	
+	    	
+	        public void onClick(View v) {
+	        	
+	        	lapsCompleted += 1;
+	        	TextView LapCounterTextView = (TextView) findViewById(R.id.textView3);
+	        	LapCounterTextView.setText(String.valueOf(lapsCompleted)+ " Laps Completed");
+	        	tracker.addNewLap((long)TimeKeeper.timer.getCurrentTime());
+	        	
+	            
+	            
+	            
+	        }
+	        
+	        
+	    });
 		
 		
 	}
