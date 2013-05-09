@@ -26,6 +26,7 @@ public class FinishActivity extends Activity {
 		lapResults.setText(RunActivity.tracker.getStats());
 		TextView paceResults = (TextView) findViewById(R.id.textView2);
 		DecimalFormat df = new DecimalFormat("#.##");
+		if(Double.valueOf(RunActivity.tracker.getLapsRan()) != 0)
 		paceResults.setText("Your pace was " + df.format(calculatePace(Double.valueOf(Double.valueOf(RunActivity.tracker.getLapsRan()) / 4), RunActivity.tracker.getLastTime())) + " mph.");
 //		(
 		

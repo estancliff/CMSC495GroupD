@@ -26,7 +26,7 @@
         android:layout_above="@+id/button1"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="107dp"
-        android:text="This is for BIG RESULTS"
+        android:text="You ran no laps!"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
