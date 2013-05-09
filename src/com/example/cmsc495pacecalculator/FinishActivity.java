@@ -27,7 +27,7 @@ public class FinishActivity extends Activity {
 		TextView paceResults = (TextView) findViewById(R.id.textView2);
 		DecimalFormat df = new DecimalFormat("#.##");
 		if(Double.valueOf(RunActivity.tracker.getLapsRan()) != 0)
-		paceResults.setText("Your pace was " + df.format(calculatePace(Double.valueOf(Double.valueOf(RunActivity.tracker.getLapsRan()) / 4), RunActivity.tracker.getLastTime())) + " mph.");
+		paceResults.setText("Your pace was " + df.format(calculatePace(Double.valueOf(Double.valueOf(RunActivity.tracker.getLapsRan()) / 4), RunActivity.tracker.getLastTime())) + " minutes per mile.");
 //		(
 		
  Button button = (Button) findViewById(R.id.button1);
@@ -58,7 +58,7 @@ public class FinishActivity extends Activity {
 		double pace = (miles / Double.valueOf((Double.valueOf(time) / (1000*60*60))));
 		
 		
-		return pace;
+		return 60 / pace;
 	}
 	
 	
