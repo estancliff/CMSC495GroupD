@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/editText2"
         android:layout_below="@+id/editText2"
-        android:text="Time in 'MM:SS' form"
+        android:text="Time in 'H:MM:SS' form"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView

@@ -23,9 +23,9 @@
             </intent-filter>
         </activity>
         
-        <activity android:label="@string/app_name" android:name="com.example.cmsc495pacecalculator.RunActivity"/>
-         <activity android:label="@string/app_name" android:name="com.example.cmsc495pacecalculator.FinishActivity"/>
-        
+        <activity android:label="@string/app_name" android:name="com.example.cmsc495pacecalculator.RunActivity" android:screenOrientation="portrait"/>
+         <activity android:label="@string/app_name" android:name="com.example.cmsc495pacecalculator.FinishActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="com.example.cmsc495pacecalculator.ShowPopup" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

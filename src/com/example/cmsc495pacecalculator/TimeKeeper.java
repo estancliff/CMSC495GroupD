@@ -3,6 +3,7 @@ package com.example.cmsc495pacecalculator;
 import android.app.Activity;
 
 public class TimeKeeper implements Runnable {
+public static double finalTime = 0;
 public static TimerClass timer = new TimerClass();
 public static boolean kill = false;
 	@Override
@@ -27,6 +28,7 @@ public static boolean kill = false;
 	}
        if (kill) break;
     	}
+    	
     	RunActivity.continues = true;
 	}
 

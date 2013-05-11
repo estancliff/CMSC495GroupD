@@ -10,6 +10,7 @@ import com.example.cmsc495pacecalculator.R.layout;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.view.Menu;
 import android.view.View;
@@ -28,6 +29,7 @@ public static boolean continues = false;
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_run);
+		setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		continues = false;
 		lapsCompleted = 0;
 		tracker = new ProgressTracker();
@@ -48,6 +50,11 @@ public static boolean continues = false;
 	    	
 	    	
 	        public void onClick(View v) {
+	        	lapsCompleted += 1;
+	        	TextView LapCounterTextView = (TextView) findViewById(R.id.textView3);
+	        	LapCounterTextView.setText(String.valueOf(lapsCompleted)+ " Laps Completed\n" + String.valueOf(lapsCompleted) + " Miles Ran");
+	        	
+	        	tracker.addNewLap((long)TimeKeeper.timer.getCurrentTime());
 	        	
 	        	
 	        		
@@ -76,7 +83,8 @@ public static boolean continues = false;
 	        	
 	        	lapsCompleted += 1;
 	        	TextView LapCounterTextView = (TextView) findViewById(R.id.textView3);
-	        	LapCounterTextView.setText(String.valueOf(lapsCompleted)+ " Laps Completed");
+	        	LapCounterTextView.setText(String.valueOf(lapsCompleted)+ " Laps Completed\n" + String.valueOf(lapsCompleted) + " Miles Ran");
+	        	
 	        	tracker.addNewLap((long)TimeKeeper.timer.getCurrentTime());
 	        	
 	            

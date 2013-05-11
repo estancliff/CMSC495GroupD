@@ -31,6 +31,7 @@ private HashMap<Integer, Long> lapsComplete;
 			
 			
 		}
+		stats = stats + "\n\n";
 		return stats;
 	}
 	public int getLapsRan(){

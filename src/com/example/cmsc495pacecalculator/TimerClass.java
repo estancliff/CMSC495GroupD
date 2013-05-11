@@ -3,15 +3,16 @@ package com.example.cmsc495pacecalculator;
 public class TimerClass {
 	
 	private long startTime;
-	
+	public static double finalTime;
 
 	public TimerClass(){
 		startTime = System.currentTimeMillis();
-		
+		finalTime = 0;
 	}
 	public String getCurrentTimeStringDisplay(){
 		String finalString = "";
 		long currentTime = System.currentTimeMillis() - startTime;
+		finalTime = currentTime / 1000;
 		String tempString = String.valueOf(Double.valueOf(currentTime));
 		System.out.println(tempString);
 		int seconds = (int) (currentTime / 1000) % 60 ;

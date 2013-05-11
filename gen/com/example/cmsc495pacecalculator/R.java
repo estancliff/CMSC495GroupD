@@ -170,9 +170,10 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f090011;
+        public static final int action_settings=0x7f090013;
         public static final int button1=0x7f090008;
         public static final int button2=0x7f09000b;
+        public static final int dismiss=0x7f090012;
         public static final int editText1=0x7f090001;
         public static final int editText2=0x7f090003;
         public static final int editText3=0x7f090007;
@@ -181,6 +182,7 @@ public final class R {
         public static final int radioButton1=0x7f090010;
         public static final int radioButton2=0x7f09000f;
         public static final int radioGroup1=0x7f090006;
+        public static final int scrollView1=0x7f090011;
         public static final int textView1=0x7f09000a;
         public static final int textView2=0x7f090009;
         public static final int textView3=0x7f090000;
@@ -193,6 +195,7 @@ public final class R {
         public static final int activity_begin=0x7f030000;
         public static final int activity_finish=0x7f030001;
         public static final int activity_run=0x7f030002;
+        public static final int popup=0x7f030003;
     }
     public static final class menu {
         public static final int begin=0x7f080000;

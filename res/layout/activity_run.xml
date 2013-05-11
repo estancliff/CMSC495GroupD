@@ -27,7 +27,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="75dp"
-        android:text="Finish Run" />
+        android:text="Final Lap Complete and Finish Run" />
 
     <Button
         android:id="@+id/button1"

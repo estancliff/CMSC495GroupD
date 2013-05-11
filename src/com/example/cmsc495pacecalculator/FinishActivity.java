@@ -9,6 +9,7 @@ import com.example.cmsc495pacecalculator.R.layout;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.view.Menu;
 import android.view.View;
@@ -21,6 +22,21 @@ public class FinishActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_finish);
+		setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		double finalTime = TimeKeeper.timer.finalTime;
+		
+		String tempString = String.valueOf(Double.valueOf(finalTime));
+		
+		int seconds = (int) (finalTime / 1000) % 60 ;
+		int minutes = (int) ((finalTime / (1000*60)) % 60);
+		int hours   = (int) ((finalTime / (1000*60*60)) % 24);
+		java.text.DecimalFormat nft = new  
+				java.text.DecimalFormat("#00.###");  
+				nft.setDecimalSeparatorAlwaysShown(false);  
+		String finalString = nft.format(Double.valueOf(hours)) + ":" + nft.format(Double.valueOf(minutes)) + ":" + nft.format(Double.valueOf(seconds));
+		
+		
+		
 		
 		TextView lapResults = (TextView) findViewById(R.id.textView1);
 		lapResults.setText(RunActivity.tracker.getStats());
@@ -28,7 +44,10 @@ public class FinishActivity extends Activity {
 		DecimalFormat df = new DecimalFormat("#.##");
 		if(Double.valueOf(RunActivity.tracker.getLapsRan()) != 0)
 		paceResults.setText("Your pace was " + df.format(calculatePace(Double.valueOf(Double.valueOf(RunActivity.tracker.getLapsRan()) / 4), RunActivity.tracker.getLastTime())) + " minutes per mile.");
-//		(
+		paceResults.append("\nYour final time was " +
+		finalString + "\nYou Ran a total of " + RunActivity.tracker.getLapsRan() + " Laps"
+				);
+
 		
  Button button = (Button) findViewById(R.id.button1);
 	    

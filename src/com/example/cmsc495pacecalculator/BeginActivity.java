@@ -11,22 +11,34 @@ import com.example.cmsc495pacecalculator.R.menu;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class BeginActivity extends Activity {
 public boolean usingTime = true;
+PopupWindow pop;
+
+boolean click = true;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_begin);
-		
+		setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+	
 		
 		RadioButton rg1 = (RadioButton) findViewById(R.id.radioButton1);
 		rg1.setOnClickListener(new View.OnClickListener(){
@@ -64,7 +76,7 @@ public boolean usingTime = true;
 	        
 	    });
 	    
- Button button1 = (Button) findViewById(R.id.button1);
+ final Button button1 = (Button) findViewById(R.id.button1);
 	    
  final EditText distOne = (EditText) findViewById(R.id.editText1);
  final EditText timePace = (EditText) findViewById(R.id.editText2);
@@ -76,6 +88,7 @@ public boolean usingTime = true;
 	    	
 	    	
 	        public void onClick(View v) {
+	        	try{
 	        	String time, pace, knownDistance, unDistance;
 	        	knownDistance = distOne.getText().toString(); 
 	        	unDistance = distTwo.getText().toString();
@@ -100,8 +113,37 @@ public boolean usingTime = true;
 	            
 	            
 	        }
-	        
-	        
+	        catch(Exception e){
+	        	
+	        	 LayoutInflater layoutInflater 
+	             = (LayoutInflater)getBaseContext()
+	              .getSystemService(LAYOUT_INFLATER_SERVICE);  
+	            View popupView = layoutInflater.inflate(R.layout.popup, null);  
+	                     final PopupWindow popupWindow = new PopupWindow(
+	                       popupView, 
+	                       LayoutParams.WRAP_CONTENT,  
+	                             LayoutParams.WRAP_CONTENT);  
+	                     
+	                     Button btnDismiss = (Button)popupView.findViewById(R.id.dismiss);
+	                     btnDismiss.setOnClickListener(new Button.OnClickListener(){
+
+	             @Override
+	             public void onClick(View v) {
+	              // TODO Auto-generated method stub
+	              popupWindow.dismiss();
+	             }});
+	                     popupWindow.showAtLocation(popupView, Gravity.CENTER, 0, 0);
+	                    // popupWindow.showAsDropDown(button1, 50, -30);
+	                 
+	           
+	        	
+	        	
+	        	
+	        	
+	        	
+	        	
+	        }
+	        }
 	    });
 	    
 	    
