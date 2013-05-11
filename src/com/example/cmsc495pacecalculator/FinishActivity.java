@@ -23,7 +23,7 @@ public class FinishActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_finish);
 		setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-		double finalTime = TimeKeeper.timer.finalTime;
+		double finalTime = TimeKeeper.timer.finalTime * 1000;
 		
 		String tempString = String.valueOf(Double.valueOf(finalTime));
 		

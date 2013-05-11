@@ -52,7 +52,7 @@ public static boolean continues = false;
 	        public void onClick(View v) {
 	        	lapsCompleted += 1;
 	        	TextView LapCounterTextView = (TextView) findViewById(R.id.textView3);
-	        	LapCounterTextView.setText(String.valueOf(lapsCompleted)+ " Laps Completed\n" + String.valueOf(lapsCompleted) + " Miles Ran");
+	        	LapCounterTextView.setText(String.valueOf(lapsCompleted)+ " Laps Completed\n" + Double.valueOf(Double.valueOf(lapsCompleted) / 4) + " Miles Ran");
 	        	
 	        	tracker.addNewLap((long)TimeKeeper.timer.getCurrentTime());
 	        	
@@ -83,7 +83,7 @@ public static boolean continues = false;
 	        	
 	        	lapsCompleted += 1;
 	        	TextView LapCounterTextView = (TextView) findViewById(R.id.textView3);
-	        	LapCounterTextView.setText(String.valueOf(lapsCompleted)+ " Laps Completed\n" + String.valueOf(lapsCompleted) + " Miles Ran");
+	        	LapCounterTextView.setText(String.valueOf(lapsCompleted)+ " Laps Completed\n" + Double.valueOf(Double.valueOf(lapsCompleted) / 4) + " Miles Ran");
 	        	
 	        	tracker.addNewLap((long)TimeKeeper.timer.getCurrentTime());
 	        	
